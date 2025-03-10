@@ -2,7 +2,7 @@
 
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import { Red_Hat_Display, Space_Grotesk } from "next/font/google";
+import { Red_Hat_Display } from "next/font/google";
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import Squares from "@/components/ui/squares";
@@ -10,7 +10,6 @@ import Index from "@/components/ui/index";
 import Globe from "@/components/ui/globe";
 
 const redHat = Red_Hat_Display({ subsets: ["latin"] });
-const space = Space_Grotesk({ subsets: ["latin"] });
 
 const lines = {
   first: "Hey , I'm",
@@ -28,11 +27,26 @@ const options = {
   easing: "cubic-bezier(.03,.98,.52,.99)",
 };
 
-const downloadcv = () => {};
+const downloadcv = () => {
+  // Direct link to the file in the public directory
+  const fileUrl = "/AryaResume.pdf";
+
+  // Create anchor element
+  const link = document.createElement("a");
+  link.href = fileUrl;
+  link.download = "AryaCV.pdf";
+
+  // Append to body, trigger click, and remove
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-start items-center px-4 py-4">
+    <section
+      className={`${redHat.className} relative w-full min-h-screen flex flex-col justify-start items-center px-4 py-4`}
+    >
       {/* Square Background - Hidden on Mobile */}
       <div className="absolute inset-0 -z-10 w-full h-full hidden md:block">
         <Squares
@@ -190,6 +204,12 @@ function Hero() {
                     src="/code-forces.png"
                     className="w-7 h-7 hover: cursor-pointer"
                     alt="CodeForces"
+                    onClick={() =>
+                      window.open(
+                        "https://codeforces.com/profile/arya92",
+                        "_blank"
+                      )
+                    }
                   />
                   <h3 className="text-sm">CodeForces.</h3>
                   <motion.img
@@ -197,6 +217,12 @@ function Hero() {
                     whileHover={{ scale: 1.1 }}
                     className="w-8 h-8 hover: cursor-pointer"
                     alt="CodeChef"
+                    onClick={() =>
+                      window.open(
+                        "https://www.codechef.com/users/aryapawar92",
+                        "_blank"
+                      )
+                    }
                   />
                   <h3 className="text-sm">Codechef.</h3>
                 </div>
@@ -220,6 +246,12 @@ function Hero() {
                     src="/leetcode.png"
                     className="w-7 h-7 hover: cursor-pointer"
                     alt="LeetCode"
+                    onClick={() =>
+                      window.open(
+                        "https://leetcode.com/u/aryapawar92/",
+                        "_blank"
+                      )
+                    }
                   />
                   <h3 className="text-sm">Leetcode.</h3>
                   <motion.img
@@ -227,6 +259,12 @@ function Hero() {
                     whileHover={{ scale: 1.1 }}
                     className="w-8 h-8 hover: cursor-pointer"
                     alt="GeeksforGeeks"
+                    onClick={() =>
+                      window.open(
+                        "https://www.geeksforgeeks.org/user/aryapa2rsg/",
+                        "_blank"
+                      )
+                    }
                   />
                   <h3 className="text-sm">GeeksforGeeks.</h3>
                 </div>

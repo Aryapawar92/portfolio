@@ -25,14 +25,15 @@ export default function Globe() {
 }
 
 function Earth() {
-  const ref = useRef(null);
+  const ref = useRef<THREE.Mesh>(null);
 
   const map = useLoader(TextureLoader, "/earth-daymap-4k.jpg");
 
   useFrame(() => {
-    ref.current.rotation.y += 0.005;
+    if (ref.current) {
+      ref.current.rotation.y += 0.005;
+    }
   });
-
   return (
     <group rotation-z={THREE.MathUtils.degToRad(-23)}>
       <mesh ref={ref}>

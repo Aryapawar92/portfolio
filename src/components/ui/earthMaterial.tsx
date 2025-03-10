@@ -92,8 +92,15 @@ function getEarthMat(sunDirection = defaultSunDirection) {
   return material;
 }
 
-function EarthMaterial({ sunDirection }) {
-  const material = React.useMemo(() => getEarthMat(sunDirection), []);
+interface EarthMaterialProps {
+  sunDirection?: THREE.Vector3;
+}
+
+function EarthMaterial({ sunDirection }: EarthMaterialProps) {
+  const material = React.useMemo(
+    () => getEarthMat(sunDirection),
+    [sunDirection]
+  );
   return <primitive object={material} />;
 }
 

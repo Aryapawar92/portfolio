@@ -20,11 +20,13 @@ export default function Index() {
 }
 
 function Cube() {
-  const mesh = useRef(null);
+  const ref = useRef<THREE.Mesh>(null);
 
   useFrame(() => {
-    mesh.current.rotation.x += 0.01;
-    mesh.current.rotation.y += 0.01;
+    if (ref.current) {
+      ref.current.rotation.x += 0.01;
+      ref.current.rotation.y += 0.01;
+    }
   });
 
   const texture1 = useLoader(TextureLoader, "/tailwind-css.png");
@@ -37,7 +39,7 @@ function Cube() {
 
   return (
     <group rotation-z={THREE.MathUtils.degToRad(-23)}>
-      <mesh ref={mesh}>
+      <mesh ref={ref}>
         <boxGeometry args={[3, 3, 3]} />
         <meshStandardMaterial map={texture1} attach="material-0" />
         <meshStandardMaterial map={texture2} attach="material-1" />
