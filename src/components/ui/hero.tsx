@@ -4,7 +4,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Red_Hat_Display } from "next/font/google";
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import ParallaxTilt from "react-parallax-tilt";
 import Squares from "@/components/ui/squares";
 import Index from "@/components/ui/index";
 import Globe from "@/components/ui/globe";
@@ -21,10 +21,12 @@ const options = {
   perspective: 1000,
   scale: 1.1,
   speed: 1000,
-  transition: true,
-  axis: null,
+  tiltMaxAngleX: 35,
+  tiltMaxAngleY: 35,
+  transitionSpeed: 1000,
+  tiltEasing: "cubic-bezier(.03,.98,.52,.99)",
+  glareEnable: false,
   reset: true,
-  easing: "cubic-bezier(.03,.98,.52,.99)",
 };
 
 const downloadcv = () => {
@@ -149,7 +151,7 @@ function Hero() {
         {/* Right Side Grid of Cards */}
         <div className="w-full md:w-1/2 mt-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-y-3 md:gap-x-1">
-            <Tilt className="w-full" options={options}>
+            <ParallaxTilt className="w-full" {...options}>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: -75 },
@@ -166,9 +168,9 @@ function Hero() {
                   <p>Frontend Developer</p>
                 </div>
               </motion.div>
-            </Tilt>
+            </ParallaxTilt>
 
-            <Tilt className="w-full" options={options}>
+            <ParallaxTilt className="w-full" {...options}>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: -75 },
@@ -185,9 +187,9 @@ function Hero() {
                   <p>Backend Developer</p>
                 </div>
               </motion.div>
-            </Tilt>
+            </ParallaxTilt>
 
-            <Tilt className="w-full" options={options}>
+            <ParallaxTilt className="w-full" {...options}>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 75 },
@@ -227,9 +229,9 @@ function Hero() {
                   <h3 className="text-sm">Codechef.</h3>
                 </div>
               </motion.div>
-            </Tilt>
+            </ParallaxTilt>
 
-            <Tilt className="w-full" options={options}>
+            <ParallaxTilt className="w-full" {...options}>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 75 },
@@ -269,7 +271,7 @@ function Hero() {
                   <h3 className="text-sm">GeeksforGeeks.</h3>
                 </div>
               </motion.div>
-            </Tilt>
+            </ParallaxTilt>
           </div>
         </div>
       </div>
