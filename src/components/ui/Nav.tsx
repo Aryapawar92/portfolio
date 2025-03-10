@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import GradientText from "@/components/ui/gradientText";
@@ -17,7 +16,7 @@ const links = [
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (e: any, id: string) => {
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     setIsMenuOpen(false); // Close mobile menu if open
 

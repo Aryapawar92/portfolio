@@ -2,9 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Red_Hat_Display } from "next/font/google";
-
-const redHat = Red_Hat_Display({ subsets: ["latin"] });
 
 function Contact() {
   return (

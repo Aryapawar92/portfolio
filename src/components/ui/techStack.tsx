@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Red_Hat_Display } from "next/font/google";
+
 import { FaReact } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
 import {
@@ -18,8 +18,6 @@ import {
 } from "react-icons/si";
 import { AiOutlineJava } from "react-icons/ai";
 import { motion } from "framer-motion";
-
-const redHat = Red_Hat_Display({ subsets: ["latin"] });
 
 const stackItems = [
   { id: 1, name: "React", icon: FaReact, color: "#61DAFB" },

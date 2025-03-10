@@ -5,9 +5,6 @@ import Hero from "@/components/ui/hero";
 import TechStack from "@/components/ui/techStack";
 import Projects from "@/components/ui/projects";
 import Contact from "@/components/ui/contact";
-import { Red_Hat_Display } from "next/font/google";
-
-const redHat = Red_Hat_Display({ subsets: ["latin"] });
 
 export default function Home() {
   return (
