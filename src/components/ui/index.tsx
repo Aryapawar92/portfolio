@@ -28,6 +28,7 @@ function Cube() {
   });
 
   const texture1 = useLoader(TextureLoader, "/tailwind-css.png");
+
   const texture2 = useLoader(TextureLoader, "/reactjs.png");
   const texture3 = useLoader(TextureLoader, "/next-js.svg");
   const texture4 = useLoader(TextureLoader, "/js.png");
