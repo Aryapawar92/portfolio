@@ -7,7 +7,22 @@ import { Red_Hat_Display } from "next/font/google";
 
 const Redhat = Red_Hat_Display({ subsets: ["latin"] });
 
-const projectsDetails = [
+// Define interfaces for your data
+interface Tag {
+  name: string;
+  color: string;
+}
+
+interface Project {
+  name: string;
+  description: string;
+  tags: Tag[];
+  image: string;
+  source_code_link: string;
+  live_link?: string; // Optional since some projects don't have live demos
+}
+
+const projectsDetails: Project[] = [
   {
     name: "Corner",
     description:
@@ -63,14 +78,15 @@ function Projects() {
   );
 }
 
-const ProjectCard = ({
+// Using the Project interface for props
+const ProjectCard: React.FC<Project> = ({
   name,
   description,
   tags,
   image,
   source_code_link,
   live_link,
-}: any) => {
+}) => {
   return (
     <motion.div>
       <ParallaxTilt
@@ -81,18 +97,24 @@ const ProjectCard = ({
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
-          <img src={image} className="w-full h-full object-cover rounded-2xl" />
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover rounded-2xl"
+          />
         </div>
 
         <div className="mt-4">
           <h3 className="text-white font-bold text-[24px] flex items-center gap-2">
             {name}
-            <button
-              onClick={() => window.open(live_link, "_blank")}
-              className="text-sm"
-            >
-              (Demo...)
-            </button>
+            {live_link && live_link.length > 0 && (
+              <button
+                onClick={() => window.open(live_link, "_blank")}
+                className="text-sm"
+              >
+                (Demo...)
+              </button>
+            )}
             <button onClick={() => window.open(source_code_link, "_blank")}>
               <img src="/github.png" alt="GitHub" className="w-6 h-6" />
             </button>
@@ -102,7 +124,7 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag: any) => (
+          {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
               className="text-[14px] font-semibold"
