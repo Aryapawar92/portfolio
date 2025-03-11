@@ -28,7 +28,7 @@ const Nav = () => {
 
   return (
     <nav
-      className={`${redHat.className} fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50 py-6`}
+      className={`${redHat.className} fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-30 py-2`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         {/* Logo */}

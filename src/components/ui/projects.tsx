@@ -20,6 +20,7 @@ interface Project {
   image: string;
   source_code_link: string;
   live_link?: string; // Optional since some projects don't have live demos
+  transition?: number;
 }
 
 const projectsDetails: Project[] = [
@@ -35,6 +36,7 @@ const projectsDetails: Project[] = [
     image: "/corner.jpg", // Ensure this is in /public
     source_code_link: "https://github.com/Aryapawar92/corner-final",
     live_link: "",
+    transition: -80,
   },
   {
     name: "Earth 3D",
@@ -48,6 +50,7 @@ const projectsDetails: Project[] = [
     image: "/earth-project.png", // Ensure this is in /public
     source_code_link: "https://github.com/Aryapawar92/Earth-3js",
     live_link: "https://earth-3js.vercel.app/",
+    transition: -60,
   },
   {
     name: "Bookepeer API",
@@ -61,6 +64,7 @@ const projectsDetails: Project[] = [
     image: "/Postman-AT&RT.png", // Ensure this is in /public
     source_code_link: "https://github.com/Aryapawar92/BookKeeper-API",
     live_link: "",
+    transition: -40,
   },
 ];
 
@@ -86,9 +90,14 @@ const ProjectCard: React.FC<Project> = ({
   image,
   source_code_link,
   live_link,
+  transition,
 }) => {
   return (
-    <motion.div>
+    <motion.div
+      initial={{ opacity: 0, x: transition }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+    >
       <ParallaxTilt
         tiltMaxAngleX={45}
         tiltMaxAngleY={45}

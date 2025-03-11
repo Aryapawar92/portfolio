@@ -50,15 +50,6 @@ function Hero() {
       className={`${redHat.className} relative w-full min-h-screen flex flex-col justify-start items-center px-4 py-4`}
     >
       {/* Square Background - Hidden on Mobile */}
-      <div className="absolute inset-0 -z-10 w-full h-full hidden md:block">
-        <Squares
-          speed={0.2}
-          squareSize={90}
-          direction="down"
-          borderColor="#262626"
-          hoverFillColor="#222"
-        />
-      </div>
 
       {/* Main Content Container */}
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row md:items-start gap-5 pt-2 mt-6">
@@ -74,24 +65,16 @@ function Hero() {
           <div className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold flex flex-col justify-end px-4 my-4 w-full">
             {/* First Line */}
             <motion.h1
-              variants={{
-                hidden: { opacity: 0, y: 75 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5, delay: 0.25 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
               {lines.first}
             </motion.h1>
             <motion.span
-              variants={{
-                hidden: { opacity: 0, y: 75 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5, delay: 0.25 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className={`${redHat.className} text-green-400`}
             >
               Arya Pawar
@@ -153,14 +136,10 @@ function Hero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-y-3 md:gap-x-1">
             <ParallaxTilt className="w-full" {...options}>
               <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: -75 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0, y: -75 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-                className="rounded-2xl greenpinkborder w-full max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
+                className="rounded-2xl greenpinkborder w-full mr-3 max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
               >
                 <div className="bg-black w-full h-full py-4 px-5 flex flex-col justify-between items-center text-white overflow-hidden rounded-2xl">
                   <Globe />
@@ -172,14 +151,10 @@ function Hero() {
 
             <ParallaxTilt className="w-full" {...options}>
               <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: -75 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0, y: -75 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.35 }}
-                className="rounded-2xl greenpinkborder w-full max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
+                className="rounded-2xl greenpinkborder w-full ml-3 max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
               >
                 <div className="bg-black w-full h-full py-4 px-5 flex flex-col justify-between items-center text-white overflow-hidden rounded-2xl">
                   <Index />
@@ -191,14 +166,10 @@ function Hero() {
 
             <ParallaxTilt className="w-full" {...options}>
               <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 75 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0, y: -75 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.45 }}
-                className="rounded-2xl greenpinkborder w-full max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
+                className="rounded-2xl greenpinkborder w-full mr-3 max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
               >
                 <div className="bg-black w-full h-full py-4 px-5 flex flex-col justify-between items-center text-white overflow-hidden rounded-2xl">
                   <motion.img
@@ -233,14 +204,10 @@ function Hero() {
 
             <ParallaxTilt className="w-full" {...options}>
               <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 75 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0, y: -75 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.55 }}
-                className="rounded-2xl greenpinkborder w-full max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
+                className="rounded-2xl greenpinkborder w-full ml-3   max-w-[215px] md:max-w-[215px] aspect-square mx-auto"
               >
                 <div className="bg-black w-full h-full py-4 px-5 flex flex-col justify-between items-center text-white overflow-hidden rounded-2xl">
                   <motion.img
