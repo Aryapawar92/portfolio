@@ -52,6 +52,10 @@ function pointerPrototype(): Pointer {
   };
 }
 
+interface HalfFloatType {
+  HALF_FLOAT_OES: GLenum;
+}
+
 export default function SplashCursor({
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
@@ -75,11 +79,11 @@ export default function SplashCursor({
     if (!canvas) return; // Guard canvas early
 
     // Pointer and config setup
-    let pointers: Pointer[] = [pointerPrototype()];
+    const pointers: Pointer[] = [pointerPrototype()];
 
     // All these are guaranteed numbers due to destructuring defaults
     // So we cast them to remove TS warnings:
-    let config = {
+    const config = {
       SIM_RESOLUTION: SIM_RESOLUTION!,
       DYE_RESOLUTION: DYE_RESOLUTION!,
       CAPTURE_RESOLUTION: CAPTURE_RESOLUTION!,
@@ -156,7 +160,7 @@ export default function SplashCursor({
 
       const halfFloatTexType = isWebGL2
         ? (gl as WebGL2RenderingContext).HALF_FLOAT
-        : (halfFloat && (halfFloat as any).HALF_FLOAT_OES) || 0;
+        : (halfFloat as HalfFloatType)?.HALF_FLOAT_OES || 0;
 
       let formatRGBA: any;
       let formatRG: any;

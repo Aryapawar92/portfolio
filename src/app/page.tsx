@@ -5,13 +5,12 @@ import Hero from "@/components/ui/hero";
 import TechStack from "@/components/ui/techStack";
 import Projects from "@/components/ui/projects";
 import Contact from "@/components/ui/contact";
-import SplashCursor from "@/components/ui/splashCursor";
 
 export default function Home() {
   return (
     <div className="relative bg-black min-h-screen">
       {/* Splash Cursor */}
-      <SplashCursor />
+      {/* {//<SplashCursor />} */}
       {/* Scrollable Content */}
       <div className="relative z-10">
         {/* Header */}
