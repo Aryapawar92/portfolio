@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { Red_Hat_Display } from "next/font/google";
 import { motion } from "framer-motion";
 import ParallaxTilt from "react-parallax-tilt";
-import Squares from "@/components/ui/squares";
+
 import Index from "@/components/ui/index";
 import Globe from "@/components/ui/globe";
 
