@@ -123,7 +123,8 @@ function Hero() {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 onClick={downloadcv}
-                className={`${redHat.className} rounded-xl bg-green-400 px-4 py-2 text-white text-wrap text-sm hover:bg-green-600`}
+                className={`${redHat.className} border-black border
+             rounded-xl bg-green-400 px-4 py-2 text-white text-wrap text-sm hover:bg-green-600`}
               >
                 Download CV.
               </motion.button>

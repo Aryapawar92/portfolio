@@ -18,6 +18,9 @@ import {
 } from "react-icons/si";
 import { AiOutlineJava } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { Red_Hat_Display } from "next/font/google";
+
+const redHat = Red_Hat_Display({ subsets: ["latin"] });
 
 const stackItems = [
   { id: 1, name: "React", icon: FaReact, color: "#61DAFB" },
@@ -53,7 +56,9 @@ function TechStack() {
   const loopingItems = [...stackItems, ...stackItems];
 
   return (
-    <div className="items-center flex flex-col bg-black overflow-hidden w-full">
+    <div
+      className={` ${redHat.className} items-center flex flex-col bg-black overflow-hidden w-full`}
+    >
       <h1 className="text-white text-3xl sm:text-4xl font-bold mb-8">
         Tech Stack
       </h1>

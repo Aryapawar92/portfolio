@@ -3,9 +3,9 @@
 import React from "react";
 import ParallaxTilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import { Red_Hat_Display } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const Redhat = Red_Hat_Display({ subsets: ["latin"] });
+const Redhat = Poppins({ subsets: ["latin"], weight: "500" });
 
 // Define interfaces for your data
 interface Tag {
@@ -27,7 +27,7 @@ const projectsDetails: Project[] = [
   {
     name: "Corner",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "AI-powered mental health platform designed to support college students dealing with depression and anxiety by offering personalized self-help tools, coping strategies, and professional guidance through deep learning and explainable AI.",
     tags: [
       { name: "MERN", color: "blue" },
       { name: "Langchain", color: " green" },
